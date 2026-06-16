@@ -679,6 +679,27 @@ impl Page for Menu {
     ("Main Menu".to_string(), help_content)
   }
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -901,6 +922,27 @@ impl Page for Language {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -1044,6 +1086,27 @@ impl Page for KeyboardLayout {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => { self.help_modal.toggle(); return Signal::Wait; }
       ui_close!() if self.help_modal.visible => { self.help_modal.hide(); return Signal::Wait; }
@@ -1368,6 +1431,27 @@ impl Page for Locale {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => { self.help_modal.toggle(); return Signal::Wait; }
       ui_close!() if self.help_modal.visible => { self.help_modal.hide(); return Signal::Wait; }
@@ -1595,6 +1679,27 @@ impl Page for Hostname {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -1832,6 +1937,27 @@ impl Page for RootPassword {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -2204,6 +2330,27 @@ impl Page for BaseSys {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -2665,6 +2812,27 @@ impl Page for DesktopEnvironment {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -3128,6 +3296,27 @@ impl Page for Design {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -3672,6 +3861,27 @@ impl Page for DisplayManager {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -3841,6 +4051,27 @@ impl Page for Timezone {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     match event.code {
       KeyCode::Char('?') => {
         self.help_modal.toggle();
@@ -4017,7 +4248,7 @@ impl ExtraPackages {
       self.state = LoadState::Syncing;
   
       thread::spawn(move || {
-        let status = Command::new("pacman")
+        let status = Command::new("./.mock_bin/pacman")
           .args(["-Sy"])
           .stdin(Stdio::null())
           .stdout(Stdio::null())
@@ -4039,7 +4270,7 @@ impl ExtraPackages {
       list
     } else {
       // Otherwise fetch once with -Slq and cache it
-      let out = Command::new("pacman").arg("-Slq").output()?;
+      let out = Command::new("./.mock_bin/pacman").arg("-Slq").output()?;
       if !out.status.success() {
         anyhow::bail!(
           "pacman -Slq failed (exit {})",
@@ -4188,6 +4419,27 @@ impl Page for ExtraPackages {
   }
 
   fn handle_input(&mut self, installer: &mut Installer, event: KeyEvent) -> Signal {
+        if event.code == KeyCode::Char('9') {
+            installer.hostname = Some("cirno".to_string());
+            installer.locale = Some("en_US.UTF-8".to_string());
+            installer.root_passwd_hash = Some("$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string());
+            installer.users.clear();
+            installer.users.push(crate::installer::users::User {
+                 username: "cirno".to_string(),
+                 password_hash: "$6$O6aBxiUdTbnRX6AO$yiuD2ZABM.8kIPKiCQhS1PWV8ffH.tKd0AP5HMq.GKYM6qb5XedO8J3gUtO8HJaQ4b8q/8dM7M0jy4TOjHovE0".to_string(),
+                 shell: "bash".to_string(),
+                 groups: vec!["wheel".to_string()],
+            });
+            installer.timezone = Some("America/Los_Angeles".to_string());
+            installer.keyboard_layout = Some("us".to_string());
+            installer.display_manager = Some("ly".to_string());
+            installer.design = Some("frost".to_string());
+            installer.desktop_environment = Some("none".to_string());
+            if !installer.drives.is_empty() {
+                installer.use_auto_drive_config = true;
+                installer.drive_config = Some(installer.drives[0].clone());
+            }
+        }
     use ratatui::crossterm::event::KeyCode;
 
     if let KeyCode::Char('?') = event.code {

@@ -39,6 +39,8 @@
             hashedRoot = "$6$zjvJDfGSC93t8SIW$AHhNB.vDDPMoiZEG3Mv6UYvgUY6eya2UY5E2XA1lF7mOg6nHXUaaBmJYAMMQhvQcA54HJSLdkJ/zdy8UKX3xL1";
           in {
             networking.hostName = "${hostname}";
+            boot.zfs.forceImportRoot = lib.mkForce false;
+            boot.swraid.enable = lib.mkForce false;
             users = lib.mkIf (config.athena.enable or false) {
               mutableUsers = false;
               extraUsers.root.hashedPassword = "${hashedRoot}";
@@ -79,6 +81,46 @@
         ];
 
         "runtime" = mkSystem [
+          ({ lib, pkgs, ... }: {
+            # Turn off GUI environments completely
+            services.xserver.enable = lib.mkForce false;
+            services.displayManager.enable = lib.mkForce false;
+            services.displayManager.sddm.enable = lib.mkForce false;
+
+            # Keep network stack active
+            networking.networkmanager.enable = lib.mkForce true;
+
+            # Pure text auto-login behavior
+            services.getty.autologinUser = lib.mkForce "root";
+            systemd.services."autologin@tty1".serviceConfig.ExecStart = lib.mkForce [
+              ""
+              "-/sbin/agetty --autologin root --noclear %I \$TERM"
+            ];
+
+            # Chain nmtui and dory together seamlessly without Nix interpolation conflicts
+            systemd.services.dory-autostart = {
+              description = "Athena TUI Installer Process";
+              wantedBy = [ "multi-user.target" ];
+              after = [ "getty@tty1.service" "NetworkManager.service" ];
+              environment = { HOME = "/root"; TERM = "xterm-256color"; };
+              serviceConfig = {
+                Type = "idle";
+                ExecStart = "${pkgs.writeShellScript "dory-bootstrap" "
+                  clear
+                  /run/current-system/sw/bin/nmtui
+                  clear
+                  exec /run/current-system/sw/bin/dory
+                "}";
+                StandardInput = "tty";
+                StandardOutput = "tty";
+                StandardError = "journal";
+                TTYPath = "/dev/tty1";
+                TTYReset = "yes";
+                TTYVHangup = "yes";
+              };
+            };
+            environment.systemPackages = [ (dory-pkg pkgs) pkgs.networkmanager ];
+          })
           "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
           home-manager.nixosModules.home-manager
           ./nixos

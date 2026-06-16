@@ -1,8 +1,12 @@
 # Edit this configuration file to define what should be installed on
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, ... }:
+{
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
 let
   # These variable names are used by Aegis backend
   version = "unstable"; #unstable or 25.05
@@ -22,6 +26,8 @@ let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/${hm-version}.tar.gz";
 in
 {
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
   imports = [ # Include the results of the hardware scan.
     {
       athena = {
@@ -64,4 +70,17 @@ in
     enable = false;
     role = "student"; 
   };
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
 }
+
+
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
+
+  boot.zfs.forceImportRoot = false;
+  boot.swraid.enable = false;
